@@ -17,7 +17,7 @@ if "authenticated" not in st.session_state:
 if not st.session_state.authenticated:
     st.title("🤖 Welcome to Bot Fixer App")
     st.subheader("Please sign in to unlock access to your AI development team.")
-    whop_auth_url = f"https://whop.com{CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code"
+    whop_auth_url = "https://whop.com" + str(CLIENT_ID) + "&redirect_uri=" + str(REDIRECT_URI) + "&response_type=code"
     st.markdown(f'[<button style="background-color:#FF4B4B; color:white; border:none; padding:12px 24px; border-radius:4px; font-size:16px; cursor:pointer; font-weight:bold;">🔑 Sign in with Whop</button>]({whop_auth_url})', unsafe_allow_html=True)
     
     query_params = st.query_params
